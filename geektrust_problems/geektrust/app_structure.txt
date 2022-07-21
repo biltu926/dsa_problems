@@ -1,0 +1,71 @@
+
+
+1. Category --- Music, Video, Podcast
+2. Plans --- Free, Personal, Premium
+3. Topup --- Four_device, Ten_device
+
+
+class Subscription(Abstract)
+    -- start_date: datetime # To be constructed by the derived classes
+    -- plan: Plan
+    -- total_renewal()
+    -- no_devices: Int
+
+
+class MusicSubscription(Subscription)
+    pass
+
+
+class VideoSubscription(Subscription)
+    pass
+
+
+class PodcastSubscription(Subscription)
+    pass
+
+
+class Plan(Abstract)
+    -- duration: Month # To be constructed by the derived classes
+    -- rate: Float
+    -- get_rate(): Any
+    -- get_duration(): Any
+    -- get_expiry(): Date
+
+
+class FreePlan(Plan)
+    -- duration: 1
+    -- rate: 0
+    -- get_rate()
+    -- get_duration()
+
+
+class PersonalPlan(Plan)
+    -- duration: 1
+    -- rate: 100
+    -- get_rate()
+    -- get_duration()
+
+
+class PremiumPlan(Plan)
+    -- duration: 3
+    -- rate: 250
+    -- get_rate()
+    -- get_duration()
+
+
+class UserSubscriptions
+    -- subscriptions: List
+    -- add_subscription()
+    -- add_topup()
+    -- start_subscription()
+
+
+************* Leap year calculation ***********
+
+If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
+If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
+If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
+The year is a leap year (it has 366 days).
+The year is not a leap year (it has 365 days).
+
+***********************************************
